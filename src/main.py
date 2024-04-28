@@ -19,9 +19,9 @@ class NoNewImageException(Exception):
 
 
 #make sure you change the URL and the folder path to your own
-default_type = "universal" #in this release only pinterest is supported
-default_url = "https://www.google.com/search?q=frieren+serie+fanart&sca_esv=6a102af87d5bf95e&udm=2&biw=1707&bih=825&ei=Vm8uZpK0KtKG9u8PsOWhoAw&ved=0ahUKEwiSt5LToOWFAxVSg_0HHbByCMQQ4dUDCBA&uact=5&oq=frieren+serie+fanart&gs_lp=Egxnd3Mtd2l6LXNlcnAiFGZyaWVyZW4gc2VyaWUgZmFuYXJ0SOgnUABYkyZwAXgAkAEAmAE9oAHfCKoBAjIwuAEDyAEA-AEBmAINoALsBagCAMICChAAGIAEGEMYigXCAggQABiABBixA8ICBRAAGIAEwgINEAAYgAQYsQMYQxiKBcICBBAAGAPCAgQQABgewgIGEAAYBRgewgIGEAAYCBgewgIIEAAYBxgIGB6YAwGSBwIxM6AH40Q&sclient=gws-wiz-serp"
-default_folder_path = "PASTE YOUR FOLDER PATH HERE if you dont use the parser"
+default_type = "pinterest" #in this release only pinterest is supported
+default_url = "https://www.pinterest.de/search/pins/?q=naruto&rs=typed"
+default_folder_path = "PASTE FOLDER PATH HERE"
 
 # Create an argument parser
 parser = argparse.ArgumentParser()
