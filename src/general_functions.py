@@ -81,7 +81,7 @@ def universal_image_grabber(driver, image_urls, website_type, folder_path):
         print(f"No new images were found after {no_new_image_counter} retries. Starting to process the image URLs...")
         driver.quit()
     # Create or open a .txt file to save the modified image URLs
-    with open("link_list.txt", "w") as file:
+    with open("image_links.txt", "w") as file:
         # Save each unique image URL to the .txt file
         for image_url in image_urls:
             file.write(image_url + "\n")
@@ -89,13 +89,13 @@ def universal_image_grabber(driver, image_urls, website_type, folder_path):
     print("All image URLs saved successfully!")
 
     # Count the number of saved URLs
-    with open("link_list.txt", "r") as file:
+    with open("image_links.txt", "r") as file:
         url_count = sum(1 for line in file)
     print(f"Number of saved URLs: {url_count}")
 
     # Read the modified image URLs from the .txt file and download each image
     image_counter = 0
-    with open("link_list.txt", "r") as file:
+    with open("image_links.txt", "r") as file:
         for line in file:
             image_url = line.strip()
             # Get the current date and time in the format dd_mm_yyyy_hh_min_sec
