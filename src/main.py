@@ -19,12 +19,9 @@ class NoNewImageException(Exception):
 
 
 #make sure you change the URL and the folder path to your own
-default_type = "pinterest" #in this release only pinterest is supported
-default_url = "https://www.pinterest.de/search/pins/?q=naruto&rs=typed"
+default_type = "universal" # Default type universal
+default_url = "https://example.com"
 default_folder_path = "PASTE FOLDER PATH HERE"
-
-# Create an argument parser
-parser = argparse.ArgumentParser()
 
 # Call the function and get the arguments --websitetype, --url, --folder_path, --retries
 args = parse_arguments(default_type, default_url, default_folder_path)

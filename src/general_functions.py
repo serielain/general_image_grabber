@@ -43,11 +43,9 @@ def universal_image_grabber(driver, image_urls, website_type, folder_path):
     try:
         # Scroll and extract image URLs 
         while(True):
-            # Scroll down the page in steps
-            for _ in range(2):  # Adjust this value based on your needs (default:2)
-                scroll_position += 150  # Scroll down 150 default
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                time.sleep(0.5)  # Adjust this value based on your needs
+            # Scroll the webpage to load more images
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(1)  # Adjust this value based on your needs
 
             # image urls before adding new ones
             image_counter_prev = len(image_urls)
@@ -67,12 +65,11 @@ def universal_image_grabber(driver, image_urls, website_type, folder_path):
             # Check if there are no new images
             if (len(image_urls) == image_counter_prev):
                 no_new_image_counter += 1
+                print(f"No new images found after {no_new_image_counter} retries")
                 if no_new_image_counter >= no_new_image_limit:
                     raise NoNewImageException
             else:
                 no_new_image_counter = 0
-            if(no_new_image_counter != 0):
-                print(f"No new images found after {no_new_image_counter} retries")
 
 
     except WebDriverException:
