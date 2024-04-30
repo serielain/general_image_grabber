@@ -108,13 +108,3 @@ def universal_image_grabber(driver, image_urls, website_type, folder_path):
                 image_file.write(image_response.content)
             image_counter += 1
             print(f"Number {image_counter} / {len(image_urls)} downloaded: {image_name}")
-
-    # def download_image(image_url, save_path):
-    #     # Send a GET request to download the image
-    #     image_response = requests.get(image_url)
-
-    #     # Save the image to the specified directory
-    #     with open(save_path, "wb") as image_file:
-    #         image_file.write(image_response.content)
-
-    #     print(f"Downloaded: {os.path.basename(save_path)}")
